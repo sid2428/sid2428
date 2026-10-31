@@ -1,71 +1,60 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./light.svg">
-  <img src="./dark.svg" width="100%" alt="Pixel-art arcade screen for Kartik Gaikwad (sid2428): a pixel portrait, a mini game where a character squashes bugs while tests pass on a floor made of his stack, and a quiz box asking visitors questions about his work.">
-</picture>
+<img src="assets/hero.svg" width="100%" alt="Kartik Gaikwad: ASCII portrait and a terminal session">
 
-I'm Kartik. I study E&TC at PICT Pune and spend most of my time building backends: Java and Spring Boot, Python and FastAPI, with Docker and CI/CD around them. The game above runs on its own. The quiz below needs you.
+<img src="assets/quiz-head.svg" width="800" alt="quiz: general developer questions, click an answer">
 
-## Play along
+<img src="assets/q1.svg" width="800" alt="The first computer &#x27;bug&#x27; ever logged (1947) was...">
 
-<details>
-<summary><b>What does AEGIS do when one of its safety checks can't run?</b></summary>
-<br>
-It blocks the payment. AEGIS fails closed: if the sanctions, spending-limit or policy check fails, or can't run at all, no money moves.
-</details>
+<details><summary><img src="assets/q1a.svg" width="760" alt="(a) a moth stuck in a relay"></summary><img src="assets/q1-yes.svg" width="760" alt="Correct. Harvard Mark II, 9 Sept 1947. The operators taped the moth into the logbook: &#x27;First actual case of bug being found.&#x27;"></details>
+<details><summary><img src="assets/q1b.svg" width="760" alt="(b) a typo on a punch card"></summary><img src="assets/q1b-no.svg" width="760" alt="Wrong, try another"></details>
+<details><summary><img src="assets/q1c.svg" width="760" alt="(c) a short circuit in a cable"></summary><img src="assets/q1c-no.svg" width="760" alt="Wrong, try another"></details>
 
-<details>
-<summary><b>Can an AI agent approve its own big payment in AEGIS?</b></summary>
-<br>
-No. High-value payments need signed approval from separate approvers, and each approval is tied to the exact cart. Change one item and the approval is void.
-</details>
+<img src="assets/q2.svg" width="800" alt="The first message ever sent over ARPANET (1969) was...">
 
-<details>
-<summary><b>What did I ship at Bluestock Fintech in a single two-week sprint?</b></summary>
-<br>
-The analytics module of a live financial dashboard: the SQL behind its tables, metrics and filters. I checked every figure against the source tables before sign-off.
-</details>
+<details><summary><img src="assets/q2a.svg" width="760" alt="(a) HELLO"></summary><img src="assets/q2a-no.svg" width="760" alt="Wrong, try another"></details>
+<details><summary><img src="assets/q2b.svg" width="760" alt="(b) LO"></summary><img src="assets/q2-yes.svg" width="760" alt="Correct. They were typing LOGIN. The receiving system crashed after &#x27;LO&#x27;, so the internet&#x27;s first word was an accident."></details>
+<details><summary><img src="assets/q2c.svg" width="760" alt="(c) TEST"></summary><img src="assets/q2c-no.svg" width="760" alt="Wrong, try another"></details>
 
-<details>
-<summary><b>How do people log in to Studio Oak?</b></summary>
-<br>
-Google sign-in or email OTP. Roles keep users and admins inside their own order and inventory endpoints.
-</details>
+<img src="assets/q3.svg" width="800" alt="Which HTTP status code means &#x27;I&#x27;m a teapot&#x27;?">
 
-<details>
-<summary><b>How many people have I mentored on DSA and backend?</b></summary>
-<br>
-300+, answering 50+ doubts a month.
-</details>
+<details><summary><img src="assets/q3a.svg" width="760" alt="(a) 404"></summary><img src="assets/q3a-no.svg" width="760" alt="Wrong, try another"></details>
+<details><summary><img src="assets/q3b.svg" width="760" alt="(b) 451"></summary><img src="assets/q3b-no.svg" width="760" alt="Wrong, try another"></details>
+<details><summary><img src="assets/q3c.svg" width="760" alt="(c) 418"></summary><img src="assets/q3-yes.svg" width="760" alt="Correct. 418, from an April Fools&#x27; RFC (2324, 1998) about controlling coffee pots. 451 is real too: &#x27;Unavailable For Legal Reasons&#x27;."></details>
 
-## Cast a vote
+<img src="assets/q4.svg" width="800" alt="When does signed 32-bit Unix time run out?">
 
-<!-- POLL:START -->
-**Java or Python for your next backend?**
+<details><summary><img src="assets/q4a.svg" width="760" alt="(a) 19 Jan 2038"></summary><img src="assets/q4-yes.svg" width="760" alt="Correct. 03:14:07 UTC on 19 Jan 2038. The seconds counter overflows and wraps back to December 1901."></details>
+<details><summary><img src="assets/q4b.svg" width="760" alt="(b) 1 Jan 2042"></summary><img src="assets/q4b-no.svg" width="760" alt="Wrong, try another"></details>
+<details><summary><img src="assets/q4c.svg" width="760" alt="(c) 31 Dec 2099"></summary><img src="assets/q4c-no.svg" width="760" alt="Wrong, try another"></details>
 
-| Vote | Count | |
-| --- | --: | --- |
-| [**Java**](https://github.com/sid2428/sid2428/issues/new?title=vote%3A+java&body=Just+hit+Submit.+A+bot+counts+your+vote%2C+replies+and+closes+this+issue.) | 0 | `░░░░░░░░░░` |
-| [**Python**](https://github.com/sid2428/sid2428/issues/new?title=vote%3A+python&body=Just+hit+Submit.+A+bot+counts+your+vote%2C+replies+and+closes+this+issue.) | 0 | `░░░░░░░░░░` |
+<img src="assets/q5.svg" width="800" alt="In JavaScript, what does  typeof NaN  return?">
 
-<sub>0 votes so far. Click an option, submit the issue, and a bot adds your vote. Voting again changes your vote.</sub>
-<!-- POLL:END -->
+<details><summary><img src="assets/q5a.svg" width="760" alt="(a) &#x27;undefined&#x27;"></summary><img src="assets/q5a-no.svg" width="760" alt="Wrong, try another"></details>
+<details><summary><img src="assets/q5b.svg" width="760" alt="(b) &#x27;number&#x27;"></summary><img src="assets/q5-yes.svg" width="760" alt="Correct. &#x27;number&#x27;. NaN is a numeric value defined by IEEE 754, so &#x27;Not a Number&#x27; is, technically, a number."></details>
+<details><summary><img src="assets/q5c.svg" width="760" alt="(c) &#x27;NaN&#x27;"></summary><img src="assets/q5c-no.svg" width="760" alt="Wrong, try another"></details>
 
-## Things I've built
+<img src="assets/q6.svg" width="800" alt="Python is named after...">
 
-**[AEGIS](https://github.com/sid2428/finance2)**: a checkpoint every AI-agent payment has to pass before money moves. Python, FastAPI, pytest, Docker. 85 tests plus 8 simulated attacks in CI, and all 8 are blocked.
+<details><summary><img src="assets/q6a.svg" width="760" alt="(a) the snake"></summary><img src="assets/q6a-no.svg" width="760" alt="Wrong, try another"></details>
+<details><summary><img src="assets/q6b.svg" width="760" alt="(b) Monty Python"></summary><img src="assets/q6-yes.svg" width="760" alt="Correct. Guido van Rossum named it after Monty Python&#x27;s Flying Circus. The snake logo came later."></details>
+<details><summary><img src="assets/q6c.svg" width="760" alt="(c) a Greek myth"></summary><img src="assets/q6c-no.svg" width="760" alt="Wrong, try another"></details>
 
-**[Studio Oak](https://github.com/sid2428/Studio__Oak)**: a full-stack store with cart, checkout, orders, an admin panel and a support bot. React, Node.js, Express, MongoDB. Our team of four built the first version in 24 hours at IEEE TechRush and won, out of 40+ teams. I owned the backend.
+<img src="assets/bughunt-head.svg" width="800" alt="bug hunt: 3 bugs hide in 8 files, open them to review">
 
-## Where I've worked
+<details><summary><img src="assets/f1.svg" width="760" alt="open billing/price.py"></summary><img src="assets/f1-open.svg" width="760" alt="billing/price.py: [clean] Decimal, not float. money math done right."></details>
+<details><summary><img src="assets/f2.svg" width="760" alt="open ui/sort.js"></summary><img src="assets/f2-open.svg" width="760" alt="ui/sort.js: [bug] sort() compares as strings by default. use sort((a, b) =&gt; a - b)."></details>
+<details><summary><img src="assets/f3.svg" width="760" alt="open auth/guard.ts"></summary><img src="assets/f3-open.svg" width="760" alt="auth/guard.ts: [clean] strict equality, optional chaining. nothing to see here."></details>
+<details><summary><img src="assets/f4.svg" width="760" alt="open db/user.sql"></summary><img src="assets/f4-open.svg" width="760" alt="db/user.sql: [clean] parameterised query. no SQL injection today."></details>
+<details><summary><img src="assets/f5.svg" width="760" alt="open shop/cart.py"></summary><img src="assets/f5-open.svg" width="760" alt="shop/cart.py: [bug] the default list is created once and shared by every call. use cart=None."></details>
+<details><summary><img src="assets/f6.svg" width="760" alt="open net/retry.js"></summary><img src="assets/f6-open.svg" width="760" alt="net/retry.js: [clean] bounded retries with exponential backoff."></details>
+<details><summary><img src="assets/f7.svg" width="760" alt="open lib/sum.c"></summary><img src="assets/f7-open.svg" width="760" alt="lib/sum.c: [bug] off-by-one: i &lt;= n reads a[n], one past the end. use i &lt; n."></details>
+<details><summary><img src="assets/f8.svg" width="760" alt="open .github/ci.yml"></summary><img src="assets/f8-open.svg" width="760" alt=".github/ci.yml: [clean] boring CI config. boring is good."></details>
 
-**SDE Intern, Bluestock Fintech** (Apr – May 2026, remote): React, SQL, Agile.<br>
-**Research Intern, Backend & DevOps** (Dec 2025 – Mar 2026, Pune): shipped 12+ features to a Spring Boot app with 200+ users, and moved a 5-service release process onto gated CI/CD, cutting release time from days to under 2 hours.
+<img src="assets/poll-head.svg" width="800" alt="poll: java or python for your next backend?">
 
-## Stack
+<img src="assets/poll.svg" width="800" alt="current poll results">
 
-Java · Spring Boot · Python · FastAPI · C++ · JavaScript · React · Node.js · Express · PostgreSQL · MySQL · MongoDB · Docker · GitHub Actions · JUnit · pytest · Linux
+<a href="https://github.com/sid2428/sid2428/issues/new?title=vote%3A+java&body=Just+hit+Submit.+A+bot+counts+your+vote%2C+replies+and+closes+this+issue."><img src="assets/vote-java.svg" width="394" alt="vote java"></a> <a href="https://github.com/sid2428/sid2428/issues/new?title=vote%3A+python&body=Just+hit+Submit.+A+bot+counts+your+vote%2C+replies+and+closes+this+issue."><img src="assets/vote-python.svg" width="394" alt="vote python"></a>
 
-## Say hi
+<img src="assets/links-head.svg" width="800" alt="links">
 
-[LinkedIn](https://www.linkedin.com/in/kartikgaikwad) · [kartikgaikwad2828@gmail.com](mailto:kartikgaikwad2828@gmail.com)
+<a href="https://www.linkedin.com/in/kartikgaikwad"><img src="assets/link-linkedin.svg" width="194" alt="LinkedIn"></a> <a href="mailto:kartikgaikwad2828@gmail.com"><img src="assets/link-email.svg" width="194" alt="email"></a> <a href="https://github.com/sid2428/finance2"><img src="assets/link-aegis.svg" width="194" alt="AEGIS repository"></a> <a href="https://github.com/sid2428/Studio__Oak"><img src="assets/link-studio-oak.svg" width="194" alt="Studio Oak repository"></a>

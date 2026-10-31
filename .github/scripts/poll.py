@@ -1,23 +1,19 @@
-"""Count a vote from an issue titled "vote: <option>" and redraw the tally in README.md.
+"""Count a vote from an issue titled "vote: <option>" and redraw assets/poll.svg.
 
-Run by .github/workflows/poll.yml. With --render it only redraws the README (no event needed).
+Run by .github/workflows/poll.yml. With --render it only redraws the image (no event needed).
 """
 import json
 import os
 import sys
+from html import escape
 from pathlib import Path
-from urllib.parse import quote_plus
 
 ROOT = Path(__file__).resolve().parents[2]
 POLL = ROOT / "poll" / "poll.json"
-README = ROOT / "README.md"
-START, END = "<!-- POLL:START -->", "<!-- POLL:END -->"
-REPO = os.environ.get("GITHUB_REPOSITORY", "sid2428/sid2428")
+OUT = ROOT / "assets" / "poll.svg"
 
-
-def vote_link(key):
-    body = "Just hit Submit. A bot counts your vote, replies and closes this issue."
-    return f"https://github.com/{REPO}/issues/new?title={quote_plus('vote: ' + key)}&body={quote_plus(body)}"
+BG, FG, SUB, DIM, FAINT, LINE = "#0A0A0A", "#EDEDED", "#BDBDBD", "#8A8A8A", "#2A2A2A", "#3A3A3A"
+FONT = "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'DejaVu Sans Mono', monospace"
 
 
 def render(poll):
@@ -26,17 +22,26 @@ def render(poll):
         if choice in counts:
             counts[choice] += 1
     total = sum(counts.values())
-    lines = [START, f"**{poll['question']}**", "", "| Vote | Count | |", "| --- | --: | --- |"]
-    for key, label in poll["options"].items():
+    w, row = 800, 40
+    h = 30 + row * len(counts) + 44
+    o = [f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="8" fill="{BG}" stroke="{LINE}"/>']
+    for i, (key, label) in enumerate(poll["options"].items()):
         n = counts[key]
-        filled = round(10 * n / total) if total else 0
-        lines.append(f"| [**{label}**]({vote_link(key)}) | {n} | `{'█' * filled}{'░' * (10 - filled)}` |")
-    lines += ["", f"<sub>{total} vote{'s' if total != 1 else ''} so far. Click an option, submit the issue, "
-                  "and a bot adds your vote. Voting again changes your vote.</sub>", END]
-    text = README.read_text(encoding="utf-8")
-    head, rest = text.split(START, 1)
-    _, tail = rest.split(END, 1)
-    README.write_text(head + "\n".join(lines) + tail, encoding="utf-8")
+        y = 44 + i * row
+        filled = round(30 * n / total) if total else 0
+        bar = "█" * filled + "░" * (30 - filled)
+        pct = f"{round(100 * n / total)}%" if total else "0%"
+        o.append(f'<text x="22" y="{y}" font-size="18" fill="{FG}">{escape(label.lower())}</text>')
+        o.append(f'<text x="150" y="{y}" font-size="18" fill="{SUB}" xml:space="preserve">{bar}</text>')
+        o.append(f'<text x="{w - 22}" y="{y}" font-size="18" fill="{FG}" text-anchor="end">{n}  ({pct})</text>')
+    o.append(f'<path d="M12 {h - 40}H{w - 12}" stroke="{FAINT}"/>')
+    o.append(f'<text x="22" y="{h - 15}" font-size="15" fill="{DIM}">{total} vote{"s" if total != 1 else ""} so far. '
+             f'voting again changes your vote.</text>')
+    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" '
+           f'aria-label="Poll results: ' + ", ".join(f"{poll['options'][k]} {v}" for k, v in counts.items()) + '">'
+           f'<style>text{{font-family:{FONT};white-space:pre;}}</style>' + "".join(o) + "</svg>")
+    OUT.parent.mkdir(exist_ok=True)
+    OUT.write_text(svg, encoding="utf-8")
 
 
 def set_output(message):
@@ -58,7 +63,7 @@ def main():
     choice = issue["title"].split(":", 1)[1].strip().lower() if ":" in issue["title"] else ""
     if choice not in poll["options"]:
         names = " or ".join(poll["options"].values())
-        set_output(f"That option isn't on the ballot. Use the {names} links in the README to vote.")
+        set_output(f"That option isn't on the ballot. Use the {names} buttons on the profile to vote.")
         return
     previous = poll["votes"].get(voter)
     poll["votes"][voter] = choice
@@ -66,11 +71,11 @@ def main():
     render(poll)
     label = poll["options"][choice]
     if previous and previous != choice:
-        set_output(f"Thanks @{voter}! You switched your vote to **{label}**. The tally is updated on the profile.")
+        set_output(f"Thanks @{voter}! You switched your vote to **{label}**. The tally on the profile is updated.")
     elif previous == choice:
         set_output(f"Thanks @{voter}! You'd already voted **{label}**, so the tally stays the same.")
     else:
-        set_output(f"Thanks @{voter}! Your vote for **{label}** is in. The tally is updated on the profile.")
+        set_output(f"Thanks @{voter}! Your vote for **{label}** is in. The tally on the profile is updated.")
 
 
 if __name__ == "__main__":
