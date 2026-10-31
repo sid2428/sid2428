@@ -1,0 +1,30 @@
+name: snake
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  push:
+    branches: [main]
+    paths: [".github/workflows/snake.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake.svg?color_snake=#E07A1F&color_dots=#EFE3CC,#E9C99A,#E0A35E,#C9772F,#8A4B22
+
+      - name: Publish to the output branch
+        run: |
+          cd dist
+          git init -q -b output
+          git add .
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "snake"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" output
