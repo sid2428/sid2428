@@ -859,6 +859,7 @@ def main():
         hero()
         static_buttons()
         bughunt()
+        daily(st)
     render_live(st)
     write_state(st)
 
