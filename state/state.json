@@ -1,5 +1,5 @@
 {
- "rev": 6,
+ "rev": 7,
  "quiz": {
   "i": 0,
   "num": 1,
@@ -44,7 +44,7 @@
  "activity": [
   {
    "text": "PUSHED 1 COMMIT TO SMARTCANTEENTAKE2",
-   "ago": "2D AGO"
+   "ago": "3D AGO"
   },
   {
    "text": "PUSHED 1 COMMIT TO SMARTCANTEEN",
@@ -52,15 +52,15 @@
   },
   {
    "text": "PUSHED 1 COMMIT TO ERP_TAKE1",
-   "ago": "3D AGO"
+   "ago": "4D AGO"
   },
   {
    "text": "MERGED A PULL REQUEST IN ERP_TAKE1",
-   "ago": "3D AGO"
+   "ago": "4D AGO"
   },
   {
    "text": "OPENED A PULL REQUEST IN ERP_TAKE1",
-   "ago": "3D AGO"
+   "ago": "4D AGO"
   }
  ],
  "activity_at": "01 NOV"
