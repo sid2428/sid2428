@@ -1,5 +1,5 @@
 {
- "rev": 17,
+ "rev": 18,
  "quiz": {
   "i": 0,
   "num": 1,
@@ -44,23 +44,23 @@
  "activity": [
   {
    "text": "PUSHED 1 COMMIT TO SMARTCANTEENTAKE2",
-   "ago": "7D AGO"
+   "ago": "8D AGO"
   },
   {
    "text": "PUSHED 1 COMMIT TO SMARTCANTEEN",
-   "ago": "7D AGO"
+   "ago": "8D AGO"
   },
   {
    "text": "PUSHED 1 COMMIT TO ERP_TAKE1",
-   "ago": "8D AGO"
+   "ago": "9D AGO"
   },
   {
    "text": "MERGED A PULL REQUEST IN ERP_TAKE1",
-   "ago": "8D AGO"
+   "ago": "9D AGO"
   },
   {
    "text": "OPENED A PULL REQUEST IN ERP_TAKE1",
-   "ago": "8D AGO"
+   "ago": "9D AGO"
   }
  ],
  "activity_at": "06 NOV"
