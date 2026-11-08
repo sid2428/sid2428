@@ -1,5 +1,5 @@
 {
- "rev": 21,
+ "rev": 22,
  "quiz": {
   "i": 0,
   "num": 1,
@@ -38,8 +38,8 @@
  "scores": {},
  "feed": [],
  "fact": {
-  "i": 7,
-  "day": "2026-11-07"
+  "i": 8,
+  "day": "2026-11-08"
  },
  "activity": [
   {
@@ -63,5 +63,5 @@
    "ago": "10D AGO"
   }
  ],
- "activity_at": "07 NOV"
+ "activity_at": "08 NOV"
 }
