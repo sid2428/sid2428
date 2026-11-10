@@ -1,0 +1,25 @@
+{
+  "name": "sid2428-oncall",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "readme": "tsx scripts/build-readme.ts",
+    "stages": "tsx scripts/render-stages.ts"
+  },
+  "dependencies": {
+    "@upstash/redis": "1.41.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "5.1.0"
+  }
+}

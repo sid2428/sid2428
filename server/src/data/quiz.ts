@@ -1,0 +1,309 @@
+export interface QuizItem {
+  q: string;
+  o: [string, string, string];
+  a: 0 | 1 | 2;
+  why: string;
+}
+
+export const QUIZ: readonly QuizItem[] = [
+  {
+    "q": "The first computer 'bug' ever logged (1947) was...",
+    "o": [
+      "A moth in a relay",
+      "A punch-card typo",
+      "A blown fuse"
+    ],
+    "a": 0,
+    "why": "Harvard Mark II, 9 Sept 1947. The moth was taped into the logbook."
+  },
+  {
+    "q": "What does git's name mean, according to Linus Torvalds?",
+    "o": [
+      "Global info tracker",
+      "British slang insult",
+      "Get it together"
+    ],
+    "a": 1,
+    "why": "Linus joked that he names all his projects after himself."
+  },
+  {
+    "q": "In most languages, 0.1 + 0.2 equals...",
+    "o": [
+      "0.3",
+      "0.30000000000000004",
+      "0.2999999999999999"
+    ],
+    "a": 1,
+    "why": "Binary floating point can't store 0.1 or 0.2 exactly."
+  },
+  {
+    "q": "JavaScript's very first name was...",
+    "o": [
+      "Mocha",
+      "CoffeeScript",
+      "ECMA"
+    ],
+    "a": 0,
+    "why": "Mocha, then LiveScript, then JavaScript, all in 1995."
+  },
+  {
+    "q": "The first word ever sent over ARPANET (1969) was...",
+    "o": [
+      "HELLO",
+      "LO",
+      "TEST"
+    ],
+    "a": 1,
+    "why": "They were typing LOGIN. The system crashed after LO."
+  },
+  {
+    "q": "What does a browser's back button behave like?",
+    "o": [
+      "A stack",
+      "A queue",
+      "A heap"
+    ],
+    "a": 0,
+    "why": "Last page in, first page out."
+  },
+  {
+    "q": "Which HTTP status code is 'I'm a teapot'?",
+    "o": [
+      "404",
+      "418",
+      "451"
+    ],
+    "a": 1,
+    "why": "From April Fools' RFC 2324 (1998) for coffee pots."
+  },
+  {
+    "q": "What does Ctrl+Z do in a Unix terminal?",
+    "o": [
+      "Undo",
+      "Suspends the process",
+      "Kills the process"
+    ],
+    "a": 1,
+    "why": "It sends SIGTSTP. Type fg to bring the job back."
+  },
+  {
+    "q": "When does signed 32-bit Unix time overflow?",
+    "o": [
+      "2038",
+      "2042",
+      "2100"
+    ],
+    "a": 0,
+    "why": "19 Jan 2038, 03:14:07 UTC. It then wraps back to 1901."
+  },
+  {
+    "q": "SQL was originally called...",
+    "o": [
+      "SEQUEL",
+      "SQUIRREL",
+      "QUERYL"
+    ],
+    "a": 0,
+    "why": "IBM renamed it to SQL because of a trademark clash."
+  },
+  {
+    "q": "Which sorting algorithm was written for Python's sort()?",
+    "o": [
+      "Quicksort",
+      "Timsort",
+      "Heapsort"
+    ],
+    "a": 1,
+    "why": "Tim Peters wrote Timsort for Python in 2002."
+  },
+  {
+    "q": "In JavaScript, typeof NaN is...",
+    "o": [
+      "'undefined'",
+      "'NaN'",
+      "'number'"
+    ],
+    "a": 2,
+    "why": "NaN is a numeric value defined by IEEE 754."
+  },
+  {
+    "q": "How many bits are in an IPv6 address?",
+    "o": [
+      "64",
+      "128",
+      "256"
+    ],
+    "a": 1,
+    "why": "128 bits: about 3.4E38 addresses."
+  },
+  {
+    "q": "Rubber duck debugging comes from which book?",
+    "o": [
+      "Clean Code",
+      "Code Complete",
+      "The Pragmatic Programmer"
+    ],
+    "a": 2,
+    "why": "A programmer explains code, line by line, to a rubber duck."
+  },
+  {
+    "q": "Python is named after...",
+    "o": [
+      "The snake",
+      "Monty Python",
+      "A Greek myth"
+    ],
+    "a": 1,
+    "why": "Guido named it after Monty Python's Flying Circus."
+  },
+  {
+    "q": "HTTP/0.9 (1991) supported how many methods?",
+    "o": [
+      "Only GET",
+      "GET and POST",
+      "Eight"
+    ],
+    "a": 0,
+    "why": "One method, no headers, HTML only."
+  },
+  {
+    "q": "The Linux penguin mascot is called...",
+    "o": [
+      "Pingu",
+      "Tux",
+      "Linus"
+    ],
+    "a": 1,
+    "why": "Tux was drawn by Larry Ewing in 1996."
+  },
+  {
+    "q": "Which company created Java?",
+    "o": [
+      "IBM",
+      "Oracle",
+      "Sun Microsystems"
+    ],
+    "a": 2,
+    "why": "Sun released it in 1995. Oracle bought Sun in 2010."
+  },
+  {
+    "q": "Docker's whale mascot is named...",
+    "o": [
+      "Moby Dock",
+      "Whaley",
+      "Captain Container"
+    ],
+    "a": 0,
+    "why": "Moby Dock carries the containers on its back."
+  },
+  {
+    "q": "In C, sizeof(char) is always...",
+    "o": [
+      "1",
+      "2",
+      "It depends on the CPU"
+    ],
+    "a": 0,
+    "why": "The C standard defines it as exactly 1."
+  },
+  {
+    "q": "What did the first website (CERN, 1991) explain?",
+    "o": [
+      "The web itself",
+      "Physics data",
+      "A bookshop"
+    ],
+    "a": 0,
+    "why": "info.cern.ch described the World Wide Web project."
+  },
+  {
+    "q": "In CAPTCHA, what does the T stand for?",
+    "o": [
+      "Timed",
+      "Turing",
+      "Trusted"
+    ],
+    "a": 1,
+    "why": "Completely Automated Public Turing test..."
+  },
+  {
+    "q": "Stack Overflow launched in...",
+    "o": [
+      "2004",
+      "2008",
+      "2012"
+    ],
+    "a": 1,
+    "why": "September 2008, by Jeff Atwood and Joel Spolsky."
+  },
+  {
+    "q": "The largest signed 32-bit integer is...",
+    "o": [
+      "2,147,483,647",
+      "4,294,967,295",
+      "65,535"
+    ],
+    "a": 0,
+    "why": "2^31 - 1. Add one and it wraps negative."
+  },
+  {
+    "q": "HTTP 402 means...",
+    "o": [
+      "Payment Required",
+      "Forbidden",
+      "Gone"
+    ],
+    "a": 0,
+    "why": "It was reserved for future use back in 1997."
+  },
+  {
+    "q": "Who wrote the first published algorithm for a machine?",
+    "o": [
+      "Alan Turing",
+      "Ada Lovelace",
+      "Grace Hopper"
+    ],
+    "a": 1,
+    "why": "Her 1843 notes on Babbage's Analytical Engine."
+  },
+  {
+    "q": "How long did the first version of JavaScript take?",
+    "o": [
+      "10 days",
+      "3 months",
+      "1 year"
+    ],
+    "a": 0,
+    "why": "Brendan Eich built it at Netscape in May 1995."
+  },
+  {
+    "q": "The 'Hello, World!' tradition began in...",
+    "o": [
+      "A Bell Labs tutorial",
+      "A MIT thesis",
+      "An IBM manual"
+    ],
+    "a": 0,
+    "why": "Brian Kernighan's 1972 tutorial on the B language."
+  },
+  {
+    "q": "Git first stored its own source code how soon after it began?",
+    "o": [
+      "4 days",
+      "4 weeks",
+      "4 months"
+    ],
+    "a": 0,
+    "why": "Started 3 April 2005, self-hosting by 7 April."
+  },
+  {
+    "q": "What is 0xCAFEBABE?",
+    "o": [
+      "A Java class file's magic number",
+      "A CSS colour",
+      "An IPv6 prefix"
+    ],
+    "a": 0,
+    "why": "Every compiled .class file starts with those 4 bytes."
+  }
+];
